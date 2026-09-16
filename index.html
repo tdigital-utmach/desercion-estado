@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deserción estudiantil UTMACH · Estado del proceso</title>
+<meta name="description" content="En qué punto está el trabajo de la DTDA sobre deserción estudiantil en la Universidad Técnica de Machala: fases, método y próximos hitos.">
+<meta name="theme-color" content="#0C5E9A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap">
+<style>
+:root{
+  --azul:#0C5E9A; --azul-txt:#0A4E80; --azul-claro:#68A8D4; --azul-hondo:#083E66;
+  --fg:#1F3465; --fg-muted:#354774;
+  --naranja:#F58037; --naranja-txt:#803506; --naranja-suave:#FBE3D1;
+  --verde:#00795C; --verde-txt:#005642;
+  --bg:#F3F6F6; --surface:#FFFFFF; --surface-alt:#E7EDEE; --rule:#CEDFEB;
+  --display:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+.shell{max-width:56rem;margin:0 auto;padding-left:16px;padding-right:16px;}
+
+header.top{background:var(--azul);color:#fff;padding-block:2.5rem 2rem;padding-top:calc(2.5rem + env(safe-area-inset-top,0px));}
+.eyebrow{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:#CEDFEB;font-weight:600;margin:0 0 .7rem;}
+h1{font-family:var(--display);font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.12;font-weight:600;margin:0 0 .7rem;color:#fff;text-wrap:balance;}
+.bajada{font-size:1.02rem;color:#DCE9F2;margin:0;max-width:44rem;}
+.sello{display:inline-flex;align-items:center;gap:.5rem;background:var(--azul-hondo);color:#DCE9F2;font-size:.76rem;font-family:var(--mono);padding:.35rem .7rem;border-radius:2px;margin-top:1.3rem;}
+.sello b{color:#fff;font-weight:700;}
+
+main{padding-block:2.5rem 4rem;}
+section{margin-bottom:3rem;}
+h2{font-family:var(--display);font-size:1.5rem;font-weight:600;margin:0 0 .4rem;}
+.sub{color:var(--fg-muted);font-size:.95rem;margin:0 0 1.5rem;max-width:44rem;}
+
+.fases{display:grid;gap:.9rem;}
+.fase{background:var(--surface);border-radius:3px;border-left:4px solid var(--rule);padding:1.1rem 1.2rem;display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;align-items:start;}
+.fase.hecha{border-left-color:var(--verde);}
+.fase.curso{border-left-color:var(--naranja);}
+.fase .num{font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--fg-muted);background:var(--surface-alt);border-radius:2px;padding:.2rem .45rem;grid-row:1/3;}
+.fase h3{font-size:1.02rem;font-weight:600;margin:0;color:var(--fg);}
+.fase p{margin:.2rem 0 0;font-size:.92rem;color:var(--fg-muted);}
+.chip{display:inline-block;font-size:.7rem;font-family:var(--mono);font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.2rem .5rem;border-radius:2px;margin-left:.5rem;vertical-align:.1em;}
+.chip.hecha{background:var(--verde);color:#fff;}
+.chip.curso{background:var(--naranja);color:#2b1403;}
+.chip.espera{background:var(--surface-alt);color:var(--fg-muted);}
+
+.dosxdos{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1rem;}
+.card{background:var(--surface);border-radius:3px;padding:1.2rem;border-top:3px solid var(--azul);}
+.card.alt{border-top-color:var(--naranja);}
+.card h3{font-size:1rem;margin:0 0 .5rem;color:var(--azul-txt);}
+.card.alt h3{color:var(--naranja-txt);}
+.card p,.card li{font-size:.92rem;color:var(--fg-muted);margin:0 0 .6rem;}
+.card ul{margin:0;padding-left:1.1rem;}
+.card li{margin-bottom:.4rem;}
+.card li::marker{color:var(--azul);}
+.card.alt li::marker{color:var(--naranja);}
+
+.metodo{background:var(--surface);border-radius:3px;padding:1.4rem 1.3rem;}
+.metodo ol{margin:0;padding-left:1.3rem;counter-reset:none;}
+.metodo li{margin-bottom:.7rem;font-size:.94rem;color:var(--fg-muted);}
+.metodo li strong{color:var(--fg);}
+.metodo li::marker{font-family:var(--mono);font-size:.82rem;color:var(--azul-txt);font-weight:700;}
+
+.reglas{border-left:4px solid var(--naranja);background:var(--naranja-suave);border-radius:0 3px 3px 0;padding:1.2rem 1.3rem;}
+.reglas h2{font-size:1.2rem;color:var(--naranja-txt);margin-bottom:.8rem;}
+.reglas p{font-size:.92rem;color:#4a2a12;margin:0 0 .7rem;}
+.reglas p:last-child{margin-bottom:0;}
+.reglas strong{color:#2b1403;}
+
+.timeline{position:relative;padding-left:1.6rem;margin-top:1.2rem;}
+.timeline::before{content:"";position:absolute;left:.36rem;top:.5rem;bottom:.5rem;width:2px;background:var(--rule);}
+.hito{position:relative;margin-bottom:1.1rem;}
+.hito::before{content:"";position:absolute;left:-1.42rem;top:.45rem;width:.7rem;height:.7rem;border-radius:50%;background:var(--surface);border:2px solid var(--azul);}
+.hito.done::before{background:var(--azul);}
+.hito .fecha{font-family:var(--mono);font-size:.76rem;color:var(--fg-muted);display:block;}
+.hito .qué{font-size:.95rem;color:var(--fg);}
+
+footer.pie{border-top:1px solid var(--rule);padding-block:1.5rem 3rem;padding-bottom:calc(3rem + env(safe-area-inset-bottom,0px));font-size:.84rem;color:var(--fg-muted);}
+footer.pie p{margin:0 0 .5rem;}
+a{color:var(--azul-txt);}
+a:focus-visible{outline:2px solid var(--naranja);outline-offset:2px;}
+@media (pointer:coarse){a{min-height:44px;display:inline-block;}}
+@media (prefers-reduced-motion:no-preference){.fase,.card{transition:none;}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="shell">
+    <p class="eyebrow">Universidad Técnica de Machala · DTDA</p>
+    <h1>Deserción estudiantil: en qué punto está el trabajo</h1>
+    <p class="bajada">La Dirección Estratégica de Transformación Digital de la Academia abrió un proceso para entender por qué los estudiantes abandonan su carrera y proponer medidas que se sostengan en evidencia. Esta página cuenta cómo va, y está escrita para que cualquier dirección de la universidad sepa dónde entra su parte.</p>
+    <p class="sello">Estado a <b>16 de septiembre de 2026</b> · fase 2 de 5</p>
+  </div>
+</header>
+
+<main class="shell">
+
+  <section>
+    <h2>Las cinco fases</h2>
+    <p class="sub">El proceso no empieza por el modelo ni por el tablero: empieza por escuchar a quienes ven el fenómeno de cerca. Solo después se cruzan esas causas contra los datos.</p>
+    <div class="fases">
+
+      <div class="fase hecha">
+        <span class="num">01</span>
+        <h3>Levantamiento de causas <span class="chip hecha">Cumplida</span></h3>
+        <p>Taller con los coordinadores de las 35 carreras. Cada coordinación nombró las causas que observa en su propia carrera, sin discutir cifras y sin proponer soluciones todavía. La sesión quedó grabada y transcrita.</p>
+      </div>
+
+      <div class="fase curso">
+        <span class="num">02</span>
+        <h3>Sistematización y cruce con los datos <span class="chip curso">En curso</span></h3>
+        <p>Las causas se ordenan por familias y se contrastan contra la información académica disponible. El objetivo es separar las que se sostienen en los datos de las que, siendo reales, no explican el grueso del fenómeno.</p>
+      </div>
+
+      <div class="fase">
+        <span class="num">03</span>
+        <h3>Validación con las direcciones <span class="chip espera">Por iniciar</span></h3>
+        <p>Cada causa que sobreviva al cruce se revisa con el área que tiene competencia sobre ella: Nivelación, Bienestar Universitario, Planificación, Admisión, las facultades. Aquí se decide qué está en manos de la universidad y qué no.</p>
+      </div>
+
+      <div class="fase">
+        <span class="num">04</span>
+        <h3>Diseño de una o dos estrategias <span class="chip espera">Por iniciar</span></h3>
+        <p>Pocas medidas, dirigidas a la causa raíz, con responsable y forma de medir si funcionan. El taller fijó un límite explícito: reducir la deserción no puede confundirse con bajar la exigencia académica.</p>
+      </div>
+
+      <div class="fase">
+        <span class="num">05</span>
+        <h3>Piloto y medición <span class="chip espera">Por iniciar</span></h3>
+        <p>Prueba acotada antes de cualquier despliegue general, con revisión de sesgos y con una persona responsable de cada decisión que afecte a un estudiante.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Cómo se está trabajando</h2>
+    <p class="sub">El método es el mismo que se anunció en el taller y no ha cambiado.</p>
+    <div class="metodo">
+      <ol>
+        <li><strong>Primero las voces, después los números.</strong> Las causas las nombran quienes coordinan las carreras; el dato sirve para pesarlas, no para reemplazarlas.</li>
+        <li><strong>Causas antes que estrategias.</strong> Mientras se levantan causas no se proponen soluciones, para no cerrar el diagnóstico antes de tenerlo.</li>
+        <li><strong>Nada sin fuente.</strong> Cada afirmación se ancla a una cita de la sesión o a un dato verificable. Lo que no se puede verificar se deja marcado como pendiente, no se rellena.</li>
+        <li><strong>La decisión siempre es humana.</strong> Ninguna alerta que salga de este trabajo toca a un estudiante sin que una persona la revise.</li>
+        <li><strong>Una o dos medidas, no veinte.</strong> El compromiso es proponer pocas acciones y poder sostenerlas.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <h2>Qué es y qué no es</h2>
+    <p class="sub">Conviene dejarlo por escrito, porque un trabajo sobre deserción se malinterpreta con facilidad.</p>
+    <div class="dosxdos">
+      <div class="card">
+        <h3>Sí es</h3>
+        <ul>
+          <li>Un diagnóstico de por qué los estudiantes abandonan, construido con las coordinaciones de carrera.</li>
+          <li>Una base para decidir dónde conviene intervenir primero.</li>
+          <li>Un proceso que expone su método y sus límites.</li>
+        </ul>
+      </div>
+      <div class="card alt">
+        <h3>No es</h3>
+        <ul>
+          <li>Un ranking de carreras ni una comparación entre facultades.</li>
+          <li>Una evaluación del desempeño docente.</li>
+          <li>Una publicación de cifras: los datos que se manejan son preliminares y no se difunden hasta estar validados.</li>
+          <li>Un sistema que decida por sí solo sobre ningún estudiante.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Dónde entra cada dirección</h2>
+    <p class="sub">La fase 3 necesita a las áreas que tienen competencia sobre cada causa. Estas son las puertas que el propio taller dejó abiertas.</p>
+    <div class="dosxdos">
+      <div class="card">
+        <h3>Nivelación y Admisión</h3>
+        <p>Alinear los contenidos de nivelación con las asignaturas que más se reprueban en primer nivel, y revisar el acompañamiento previo a la elección de carrera.</p>
+      </div>
+      <div class="card">
+        <h3>Bienestar Universitario</h3>
+        <p>Recibir los casos que una coordinación no puede resolver sola, y sostener la orientación vocacional y el apoyo psicológico.</p>
+      </div>
+      <div class="card">
+        <h3>Planificación</h3>
+        <p>Cómo pesa la permanencia estudiantil en la distribución de recursos, y qué margen existe para invertir en retención.</p>
+      </div>
+      <div class="card">
+        <h3>Facultades y coordinaciones</h3>
+        <p>Validar las causas levantadas, aportar lo que los registros no capturan y acompañar el piloto cuando llegue.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reglas">
+    <h2>Cómo se cuidan los datos</h2>
+    <p><strong>Los datos preliminares no se difunden.</strong> Las cifras que se presentaron en el taller son orientativas, están sujetas a recálculo y no se comparten con docentes ni con estudiantes hasta que estén validadas. Por eso esta página no publica tasas.</p>
+    <p><strong>Ningún estudiante identificable sale de aquí.</strong> No se trabaja con nombres, cédulas ni expedientes en ningún material que circule.</p>
+    <p><strong>Ninguna decisión únicamente automatizada.</strong> La Resolución SPDP-SPD-2026-0009-R reconoce el derecho a no ser objeto de decisiones tomadas solo por un sistema. Cualquier alerta que este trabajo produzca la revisa una persona antes de que llegue a un estudiante.</p>
+  </section>
+
+  <section>
+    <h2>Próximos hitos</h2>
+    <div class="timeline">
+      <div class="hito done">
+        <span class="fecha">16 de septiembre de 2026</span>
+        <span class="qué">Taller de levantamiento de causas con coordinadores de carrera.</span>
+      </div>
+      <div class="hito">
+        <span class="fecha">Semana del 16 de septiembre</span>
+        <span class="qué">Sistematización de las causas y primer cruce contra la información académica.</span>
+      </div>
+      <div class="hito">
+        <span class="fecha">Por definir</span>
+        <span class="qué">Mesas de validación con las direcciones que tienen competencia sobre cada causa.</span>
+      </div>
+      <div class="hito">
+        <span class="fecha">Por definir</span>
+        <span class="qué">Propuesta de una o dos estrategias, con responsable y forma de medirlas.</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie shell">
+  <p>Dirección Estratégica de Transformación Digital de la Academia · Universidad Técnica de Machala.</p>
+  <p>Esta página describe el estado de un proceso en curso y se actualiza cuando el proceso avanza. No sustituye a los informes oficiales ni publica resultados todavía no validados.</p>
+</footer>
+
+</body>
+</html>
