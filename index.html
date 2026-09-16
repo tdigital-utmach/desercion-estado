@@ -3,136 +3,193 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Deserción estudiantil UTMACH · Estado del proceso</title>
+<title>Deserción estudiantil · Estado del proceso · UTMACH</title>
 <meta name="description" content="En qué punto está el trabajo de la DTDA sobre deserción estudiantil en la Universidad Técnica de Machala: fases, método y próximos hitos.">
 <meta name="theme-color" content="#0C5E9A">
+<link rel="icon" href="marca/utmach-azul.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,600&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,560;1,9..144,460&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;700&display=swap">
 <style>
+/* Tema claro institucional UTMACH, tomado de Curriculum-Sync.
+   La marca se respeta en la superficie, no en la letra:
+   #0C5E9A es masa y nunca texto; el texto azul es #0A4E80.
+   El cuerpo no es negro: es el navy de titular #1F3465.
+   #F58037 es masa y nada más. No hay modo oscuro: el tema
+   está auditado solo para claro. */
 :root{
-  --azul:#0C5E9A; --azul-txt:#0A4E80; --azul-claro:#68A8D4; --azul-hondo:#083E66;
-  --fg:#1F3465; --fg-muted:#354774;
-  --naranja:#F58037; --naranja-txt:#803506; --naranja-suave:#FBE3D1;
-  --verde:#00795C; --verde-txt:#005642;
-  --bg:#F3F6F6; --surface:#FFFFFF; --surface-alt:#E7EDEE; --rule:#CEDFEB;
-  --display:"Newsreader",Georgia,"Times New Roman",serif;
-  --sans:"Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --bg:#FFFFFF; --surface:#F3F6F6; --surface-alt:#E7EDEE; --filete:#CEDFEB;
+  --tinta:#1F3465; --tinta-suave:#354774;
+  --azul:#0C5E9A; --azul-tinta:#0A4E80; --azul-fuerte:#09436E; --azul-panel:#DAEFF9;
+  --naranja:#F58037; --naranja-tinta:#803506; --naranja-panel:#F8E9DF;
+  --verde:#00795C; --verde-tinta:#005642; --verde-panel:#D3F2EB;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3","Segoe UI",Candara,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --r-s:5px; --r-m:9px; --r-l:14px;
 }
 *{box-sizing:border-box;}
-html,body{margin:0;padding:0;}
-body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
-.shell{max-width:56rem;margin:0 auto;padding-left:16px;padding-right:16px;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+body{margin:0;font-family:var(--sans);font-size:16px;line-height:1.6;color:var(--tinta);background:var(--bg);-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:var(--serif);font-optical-sizing:auto;font-weight:560;line-height:1.18;margin:0;letter-spacing:-.008em;color:var(--tinta);}
+p{margin:0 0 1rem;}
 
-header.top{background:var(--azul);color:#fff;padding-block:2.5rem 2rem;padding-top:calc(2.5rem + env(safe-area-inset-top,0px));}
-.eyebrow{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:#CEDFEB;font-weight:600;margin:0 0 .7rem;}
-h1{font-family:var(--display);font-size:clamp(1.8rem,5vw,2.6rem);line-height:1.12;font-weight:600;margin:0 0 .7rem;color:#fff;text-wrap:balance;}
-.bajada{font-size:1.02rem;color:#DCE9F2;margin:0;max-width:44rem;}
-.sello{display:inline-flex;align-items:center;gap:.5rem;background:var(--azul-hondo);color:#DCE9F2;font-size:.76rem;font-family:var(--mono);padding:.35rem .7rem;border-radius:2px;margin-top:1.3rem;}
-.sello b{color:#fff;font-weight:700;}
+/* ── Cabecera ── */
+.franja-marca{height:6px;background:var(--naranja);}
+.masthead{background:var(--bg);border-bottom:1px solid var(--filete);}
+.masthead-interior{max-width:1280px;margin:0 auto;padding:10px clamp(16px,4vw,36px);display:flex;flex-wrap:wrap;row-gap:8px;align-items:center;justify-content:space-between;gap:8px 16px;}
+.marca{display:flex;align-items:center;gap:14px;min-width:0;}
+.logo{height:26px;width:auto;display:block;flex:none;}
+.marca-corte{flex:none;width:1px;height:34px;background:var(--filete);}
+.marca-texto h1{font-size:1.28rem;font-weight:620;}
+.marca-texto h1 em{font-style:italic;font-weight:420;color:var(--azul-tinta);}
+.marca-texto p{margin:0;font-size:.72rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--tinta-suave);}
+.pastilla{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;font-weight:600;color:var(--tinta-suave);background:var(--surface);border:1px solid var(--filete);border-radius:999px;padding:6px 14px;}
+.punto{width:8px;height:8px;border-radius:50%;background:var(--naranja);flex:none;}
 
-main{padding-block:2.5rem 4rem;}
-section{margin-bottom:3rem;}
-h2{font-family:var(--display);font-size:1.5rem;font-weight:600;margin:0 0 .4rem;}
-.sub{color:var(--fg-muted);font-size:.95rem;margin:0 0 1.5rem;max-width:44rem;}
+/* ── Lienzo ── */
+.lienzo{max-width:1280px;margin:0 auto;padding:clamp(26px,4vw,52px) clamp(16px,4vw,36px);}
+.kicker{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:.74rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--tinta-suave);}
+.kicker-marca{flex:none;width:26px;height:6px;background:var(--naranja);}
 
-.fases{display:grid;gap:.9rem;}
-.fase{background:var(--surface);border-radius:3px;border-left:4px solid var(--rule);padding:1.1rem 1.2rem;display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;align-items:start;}
-.fase.hecha{border-left-color:var(--verde);}
-.fase.curso{border-left-color:var(--naranja);}
-.fase .num{font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--fg-muted);background:var(--surface-alt);border-radius:2px;padding:.2rem .45rem;grid-row:1/3;}
-.fase h3{font-size:1.02rem;font-weight:600;margin:0;color:var(--fg);}
-.fase p{margin:.2rem 0 0;font-size:.92rem;color:var(--fg-muted);}
-.chip{display:inline-block;font-size:.7rem;font-family:var(--mono);font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.2rem .5rem;border-radius:2px;margin-left:.5rem;vertical-align:.1em;}
-.chip.hecha{background:var(--verde);color:#fff;}
-.chip.curso{background:var(--naranja);color:#2b1403;}
-.chip.espera{background:var(--surface-alt);color:var(--fg-muted);}
+.intro{display:grid;gap:18px;margin-bottom:clamp(28px,4.5vw,48px);}
+@media (min-width:900px){.intro-cuerpo{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(24px,4vw,56px);align-items:start;}
+  .intro-copete{border-left:1px solid var(--filete);padding-left:clamp(20px,2.5vw,34px);padding-bottom:6px;}}
+.intro-titular h2{font-size:clamp(2rem,5.4vw,3.35rem);line-height:1.04;letter-spacing:-.014em;font-weight:580;max-width:15ch;}
+.intro-titular h2 em{font-style:italic;font-weight:460;color:var(--azul-tinta);}
+.intro-copete{margin:0;max-width:44ch;font-size:1.04rem;line-height:1.65;color:var(--tinta-suave);}
+.intro-copete p:last-child{margin-bottom:0;}
 
-.dosxdos{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1rem;}
-.card{background:var(--surface);border-radius:3px;padding:1.2rem;border-top:3px solid var(--azul);}
-.card.alt{border-top-color:var(--naranja);}
-.card h3{font-size:1rem;margin:0 0 .5rem;color:var(--azul-txt);}
-.card.alt h3{color:var(--naranja-txt);}
-.card p,.card li{font-size:.92rem;color:var(--fg-muted);margin:0 0 .6rem;}
-.card ul{margin:0;padding-left:1.1rem;}
-.card li{margin-bottom:.4rem;}
-.card li::marker{color:var(--azul);}
-.card.alt li::marker{color:var(--naranja);}
+section{margin-bottom:clamp(34px,5vw,62px);}
+h2.seccion{font-size:clamp(1.4rem,2.6vw,1.85rem);margin-bottom:.35rem;}
+.sub{color:var(--tinta-suave);font-size:.98rem;max-width:62ch;margin:0 0 1.6rem;}
 
-.metodo{background:var(--surface);border-radius:3px;padding:1.4rem 1.3rem;}
-.metodo ol{margin:0;padding-left:1.3rem;counter-reset:none;}
-.metodo li{margin-bottom:.7rem;font-size:.94rem;color:var(--fg-muted);}
-.metodo li strong{color:var(--fg);}
-.metodo li::marker{font-family:var(--mono);font-size:.82rem;color:var(--azul-txt);font-weight:700;}
+/* ── Fases ── */
+.fases{display:grid;gap:12px;}
+.fase{background:var(--bg);border:1px solid var(--filete);border-radius:var(--r-l);padding:clamp(18px,2.4vw,26px);display:grid;grid-template-columns:auto 1fr;gap:4px 18px;align-items:start;}
+.fase.hecha{border-left:5px solid var(--verde);}
+.fase.curso{border-left:5px solid var(--naranja);background:var(--surface);}
+.fase.espera{border-left:5px solid var(--filete);}
+.ordinal{grid-row:1/3;font-family:var(--serif);font-size:1.5rem;font-weight:560;color:var(--azul-tinta);line-height:1;padding-top:2px;}
+.ordinal::after{content:".";color:var(--naranja);font-style:normal;}
+.fase h3{font-size:1.1rem;}
+.fase p{margin:.35rem 0 0;font-size:.95rem;color:var(--tinta-suave);}
+.etiqueta{display:inline-block;font-family:var(--sans);font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .55rem;border-radius:var(--r-s);margin-left:.6rem;vertical-align:.15em;}
+.etiqueta.hecha{background:var(--verde-panel);color:var(--verde-tinta);}
+.etiqueta.curso{background:var(--naranja);color:var(--tinta);}
+.etiqueta.espera{background:var(--surface-alt);color:var(--tinta-suave);}
 
-.reglas{border-left:4px solid var(--naranja);background:var(--naranja-suave);border-radius:0 3px 3px 0;padding:1.2rem 1.3rem;}
-.reglas h2{font-size:1.2rem;color:var(--naranja-txt);margin-bottom:.8rem;}
-.reglas p{font-size:.92rem;color:#4a2a12;margin:0 0 .7rem;}
-.reglas p:last-child{margin-bottom:0;}
-.reglas strong{color:#2b1403;}
+/* ── Rejillas y tarjetas ── */
+.rejilla{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:14px;}
+.tarjeta{background:var(--bg);border:1px solid var(--filete);border-radius:var(--r-l);padding:clamp(20px,2.6vw,28px);}
+.tarjeta h3{font-size:1.05rem;margin-bottom:.5rem;}
+.tarjeta p{margin:0;font-size:.94rem;color:var(--tinta-suave);}
+.tarjeta ul{margin:0;padding-left:1.15rem;}
+.tarjeta li{font-size:.94rem;color:var(--tinta-suave);margin-bottom:.5rem;}
+.tarjeta li::marker{color:var(--azul);}
+.tarjeta-clave{border-left:3px solid var(--naranja);}
+.tarjeta-clave li::marker{color:var(--naranja);}
 
-.timeline{position:relative;padding-left:1.6rem;margin-top:1.2rem;}
-.timeline::before{content:"";position:absolute;left:.36rem;top:.5rem;bottom:.5rem;width:2px;background:var(--rule);}
-.hito{position:relative;margin-bottom:1.1rem;}
-.hito::before{content:"";position:absolute;left:-1.42rem;top:.45rem;width:.7rem;height:.7rem;border-radius:50%;background:var(--surface);border:2px solid var(--azul);}
+/* ── Método ── */
+.metodo{background:var(--surface);border-radius:var(--r-l);padding:clamp(22px,3vw,34px);}
+.metodo ol{margin:0;padding-left:1.4rem;}
+.metodo li{margin-bottom:.85rem;font-size:.98rem;color:var(--tinta-suave);}
+.metodo li:last-child{margin-bottom:0;}
+.metodo li strong{color:var(--tinta);font-weight:600;}
+.metodo li::marker{font-family:var(--mono);font-size:.82rem;color:var(--azul-tinta);font-weight:700;}
+
+/* ── Panel de datos ── */
+.panel-datos{background:var(--azul-panel);border-left:5px solid var(--naranja);border-radius:0 var(--r-l) var(--r-l) 0;padding:clamp(22px,3vw,34px);}
+.panel-datos h2{font-size:clamp(1.3rem,2.4vw,1.7rem);margin-bottom:1rem;}
+.panel-datos p{font-size:.96rem;color:var(--tinta);}
+.panel-datos p:last-child{margin-bottom:0;}
+.panel-datos strong{font-weight:700;}
+
+/* ── Hitos ── */
+.riel{position:relative;padding-left:1.9rem;}
+.riel::before{content:"";position:absolute;left:.42rem;top:.6rem;bottom:.6rem;width:2px;background:var(--filete);}
+.hito{position:relative;margin-bottom:1.3rem;}
+.hito::before{content:"";position:absolute;left:-1.72rem;top:.42rem;width:.78rem;height:.78rem;border-radius:50%;background:var(--bg);border:2px solid var(--azul);}
 .hito.done::before{background:var(--azul);}
-.hito .fecha{font-family:var(--mono);font-size:.76rem;color:var(--fg-muted);display:block;}
-.hito .qué{font-size:.95rem;color:var(--fg);}
+.hito .fecha{display:block;font-family:var(--mono);font-size:.74rem;color:var(--tinta-suave);letter-spacing:.02em;}
+.hito .que{font-size:.99rem;}
 
-footer.pie{border-top:1px solid var(--rule);padding-block:1.5rem 3rem;padding-bottom:calc(3rem + env(safe-area-inset-bottom,0px));font-size:.84rem;color:var(--fg-muted);}
-footer.pie p{margin:0 0 .5rem;}
-a{color:var(--azul-txt);}
-a:focus-visible{outline:2px solid var(--naranja);outline-offset:2px;}
+/* ── Pie ── */
+.pie{margin-top:clamp(30px,5vw,56px);background:var(--azul-fuerte);border-top:6px solid var(--naranja);color:#FFFFFF;}
+.pie-interior{max-width:1280px;margin:0 auto;padding:clamp(28px,4vw,44px) clamp(16px,4vw,36px);display:flex;gap:22px;align-items:center;}
+.pie-sello{width:62px;height:62px;flex:none;}
+.pie p{margin:3px 0;}
+.pie-lema{font-family:var(--serif);font-style:italic;font-size:1.1rem;letter-spacing:.01em;}
+.pie-firma{font-size:.84rem;font-weight:600;}
+.pie-fino{max-width:64ch;font-size:.74rem;opacity:.78;margin-top:10px !important;}
+@media (max-width:560px){.pie-interior{flex-direction:column;align-items:flex-start;}}
 @media (pointer:coarse){a{min-height:44px;display:inline-block;}}
-@media (prefers-reduced-motion:no-preference){.fase,.card{transition:none;}}
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="shell">
-    <p class="eyebrow">Universidad Técnica de Machala · DTDA</p>
-    <h1>Deserción estudiantil: en qué punto está el trabajo</h1>
-    <p class="bajada">La Dirección Estratégica de Transformación Digital de la Academia abrió un proceso para entender por qué los estudiantes abandonan su carrera y proponer medidas que se sostengan en evidencia. Esta página cuenta cómo va, y está escrita para que cualquier dirección de la universidad sepa dónde entra su parte.</p>
-    <p class="sello">Estado a <b>16 de septiembre de 2026</b> · fase 2 de 5</p>
+<header class="masthead">
+  <div class="franja-marca" aria-hidden="true"></div>
+  <div class="masthead-interior">
+    <div class="marca">
+      <img class="logo" src="marca/utmach-azul.png" alt="Universidad Técnica de Machala" width="900" height="136">
+      <span class="marca-corte" aria-hidden="true"></span>
+      <div class="marca-texto">
+        <h1>Deserción<em> estudiantil</em></h1>
+        <p>Estado del proceso</p>
+      </div>
+    </div>
+    <span class="pastilla"><i class="punto"></i>Fase 2 de 5 · 16 de septiembre de 2026</span>
   </div>
 </header>
 
-<main class="shell">
+<main class="lienzo">
+
+  <div class="intro">
+    <p class="kicker"><span class="kicker-marca" aria-hidden="true"></span>Dirección Estratégica de Transformación Digital de la Academia</p>
+    <div class="intro-cuerpo">
+      <div class="intro-titular">
+        <h2>Por qué se van, <em>antes de decidir qué hacer.</em></h2>
+      </div>
+      <div class="intro-copete">
+        <p>La universidad abrió un proceso para entender por qué los estudiantes abandonan su carrera y proponer medidas que se sostengan en evidencia. Empezó escuchando a quienes ven el fenómeno de cerca: las coordinaciones de las 35 carreras.</p>
+        <p>Esta página cuenta en qué punto va, y está escrita para que cualquier dirección sepa dónde entra su parte.</p>
+      </div>
+    </div>
+  </div>
 
   <section>
-    <h2>Las cinco fases</h2>
-    <p class="sub">El proceso no empieza por el modelo ni por el tablero: empieza por escuchar a quienes ven el fenómeno de cerca. Solo después se cruzan esas causas contra los datos.</p>
+    <h2 class="seccion">Las cinco fases</h2>
+    <p class="sub">El proceso no empieza por el modelo ni por el tablero. Primero las causas, después los datos, y solo al final las medidas.</p>
     <div class="fases">
 
       <div class="fase hecha">
-        <span class="num">01</span>
-        <h3>Levantamiento de causas <span class="chip hecha">Cumplida</span></h3>
-        <p>Taller con los coordinadores de las 35 carreras. Cada coordinación nombró las causas que observa en su propia carrera, sin discutir cifras y sin proponer soluciones todavía. La sesión quedó grabada y transcrita.</p>
+        <span class="ordinal">1</span>
+        <h3>Levantamiento de causas <span class="etiqueta hecha">Cumplida</span></h3>
+        <p>Taller con los coordinadores de carrera. Cada coordinación nombró las causas que observa en la suya, sin discutir cifras y sin proponer soluciones todavía. La sesión quedó grabada y transcrita.</p>
       </div>
 
       <div class="fase curso">
-        <span class="num">02</span>
-        <h3>Sistematización y cruce con los datos <span class="chip curso">En curso</span></h3>
+        <span class="ordinal">2</span>
+        <h3>Sistematización y cruce con los datos <span class="etiqueta curso">En curso</span></h3>
         <p>Las causas se ordenan por familias y se contrastan contra la información académica disponible. El objetivo es separar las que se sostienen en los datos de las que, siendo reales, no explican el grueso del fenómeno.</p>
       </div>
 
-      <div class="fase">
-        <span class="num">03</span>
-        <h3>Validación con las direcciones <span class="chip espera">Por iniciar</span></h3>
-        <p>Cada causa que sobreviva al cruce se revisa con el área que tiene competencia sobre ella: Nivelación, Bienestar Universitario, Planificación, Admisión, las facultades. Aquí se decide qué está en manos de la universidad y qué no.</p>
+      <div class="fase espera">
+        <span class="ordinal">3</span>
+        <h3>Validación con las direcciones <span class="etiqueta espera">Por iniciar</span></h3>
+        <p>Cada causa que sobreviva al cruce se revisa con el área que tiene competencia sobre ella. Aquí se decide qué está en manos de la universidad y qué solo se puede mitigar.</p>
       </div>
 
-      <div class="fase">
-        <span class="num">04</span>
-        <h3>Diseño de una o dos estrategias <span class="chip espera">Por iniciar</span></h3>
+      <div class="fase espera">
+        <span class="ordinal">4</span>
+        <h3>Diseño de una o dos estrategias <span class="etiqueta espera">Por iniciar</span></h3>
         <p>Pocas medidas, dirigidas a la causa raíz, con responsable y forma de medir si funcionan. El taller fijó un límite explícito: reducir la deserción no puede confundirse con bajar la exigencia académica.</p>
       </div>
 
-      <div class="fase">
-        <span class="num">05</span>
-        <h3>Piloto y medición <span class="chip espera">Por iniciar</span></h3>
+      <div class="fase espera">
+        <span class="ordinal">5</span>
+        <h3>Piloto y medición <span class="etiqueta espera">Por iniciar</span></h3>
         <p>Prueba acotada antes de cualquier despliegue general, con revisión de sesgos y con una persona responsable de cada decisión que afecte a un estudiante.</p>
       </div>
 
@@ -140,13 +197,13 @@ a:focus-visible{outline:2px solid var(--naranja);outline-offset:2px;}
   </section>
 
   <section>
-    <h2>Cómo se está trabajando</h2>
-    <p class="sub">El método es el mismo que se anunció en el taller y no ha cambiado.</p>
+    <h2 class="seccion">Cómo se está trabajando</h2>
+    <p class="sub">El método es el que se anunció en el taller y no ha cambiado.</p>
     <div class="metodo">
       <ol>
         <li><strong>Primero las voces, después los números.</strong> Las causas las nombran quienes coordinan las carreras; el dato sirve para pesarlas, no para reemplazarlas.</li>
         <li><strong>Causas antes que estrategias.</strong> Mientras se levantan causas no se proponen soluciones, para no cerrar el diagnóstico antes de tenerlo.</li>
-        <li><strong>Nada sin fuente.</strong> Cada afirmación se ancla a una cita de la sesión o a un dato verificable. Lo que no se puede verificar se deja marcado como pendiente, no se rellena.</li>
+        <li><strong>Nada sin fuente.</strong> Cada afirmación se ancla a una cita de la sesión o a un dato verificable. Lo que no se puede verificar se deja marcado como pendiente.</li>
         <li><strong>La decisión siempre es humana.</strong> Ninguna alerta que salga de este trabajo toca a un estudiante sin que una persona la revise.</li>
         <li><strong>Una o dos medidas, no veinte.</strong> El compromiso es proponer pocas acciones y poder sostenerlas.</li>
       </ol>
@@ -154,10 +211,10 @@ a:focus-visible{outline:2px solid var(--naranja);outline-offset:2px;}
   </section>
 
   <section>
-    <h2>Qué es y qué no es</h2>
+    <h2 class="seccion">Qué es y qué no es</h2>
     <p class="sub">Conviene dejarlo por escrito, porque un trabajo sobre deserción se malinterpreta con facilidad.</p>
-    <div class="dosxdos">
-      <div class="card">
+    <div class="rejilla">
+      <div class="tarjeta">
         <h3>Sí es</h3>
         <ul>
           <li>Un diagnóstico de por qué los estudiantes abandonan, construido con las coordinaciones de carrera.</li>
@@ -165,7 +222,7 @@ a:focus-visible{outline:2px solid var(--naranja);outline-offset:2px;}
           <li>Un proceso que expone su método y sus límites.</li>
         </ul>
       </div>
-      <div class="card alt">
+      <div class="tarjeta tarjeta-clave">
         <h3>No es</h3>
         <ul>
           <li>Un ranking de carreras ni una comparación entre facultades.</li>
@@ -178,29 +235,37 @@ a:focus-visible{outline:2px solid var(--naranja);outline-offset:2px;}
   </section>
 
   <section>
-    <h2>Dónde entra cada dirección</h2>
-    <p class="sub">La fase 3 necesita a las áreas que tienen competencia sobre cada causa. Estas son las puertas que el propio taller dejó abiertas.</p>
-    <div class="dosxdos">
-      <div class="card">
+    <h2 class="seccion">Dónde entra cada dirección</h2>
+    <p class="sub">La fase 3 necesita a las áreas con competencia sobre cada causa. Estas son las puertas que el propio taller dejó abiertas.</p>
+    <div class="rejilla">
+      <div class="tarjeta">
         <h3>Nivelación y Admisión</h3>
         <p>Alinear los contenidos de nivelación con las asignaturas que más se reprueban en primer nivel, y revisar el acompañamiento previo a la elección de carrera.</p>
       </div>
-      <div class="card">
+      <div class="tarjeta">
         <h3>Bienestar Universitario</h3>
         <p>Recibir los casos que una coordinación no puede resolver sola, y sostener la orientación vocacional y el apoyo psicológico.</p>
       </div>
-      <div class="card">
+      <div class="tarjeta">
         <h3>Planificación</h3>
         <p>Cómo pesa la permanencia estudiantil en la distribución de recursos, y qué margen existe para invertir en retención.</p>
       </div>
-      <div class="card">
+      <div class="tarjeta">
+        <h3>Formación Académica</h3>
+        <p>El procedimiento de justificación de faltas y la habilitación de recuperaciones, que hoy llega tarde y termina en matrícula extraordinaria.</p>
+      </div>
+      <div class="tarjeta">
+        <h3>Tecnologías de la Información</h3>
+        <p>Lo que hoy se hace a mano y debería avisar solo: la alerta al coordinador cuando un curso empieza a acumular faltas.</p>
+      </div>
+      <div class="tarjeta">
         <h3>Facultades y coordinaciones</h3>
         <p>Validar las causas levantadas, aportar lo que los registros no capturan y acompañar el piloto cuando llegue.</p>
       </div>
     </div>
   </section>
 
-  <section class="reglas">
+  <section class="panel-datos">
     <h2>Cómo se cuidan los datos</h2>
     <p><strong>Los datos preliminares no se difunden.</strong> Las cifras que se presentaron en el taller son orientativas, están sujetas a recálculo y no se comparten con docentes ni con estudiantes hasta que estén validadas. Por eso esta página no publica tasas.</p>
     <p><strong>Ningún estudiante identificable sale de aquí.</strong> No se trabaja con nombres, cédulas ni expedientes en ningún material que circule.</p>
@@ -208,32 +273,43 @@ a:focus-visible{outline:2px solid var(--naranja);outline-offset:2px;}
   </section>
 
   <section>
-    <h2>Próximos hitos</h2>
-    <div class="timeline">
+    <h2 class="seccion">Próximos hitos</h2>
+    <p class="sub">Lo que la propia sesión se fijó al cerrar.</p>
+    <div class="riel">
       <div class="hito done">
         <span class="fecha">16 de septiembre de 2026</span>
-        <span class="qué">Taller de levantamiento de causas con coordinadores de carrera.</span>
+        <span class="que">Taller de levantamiento de causas con coordinadores de carrera.</span>
       </div>
       <div class="hito">
         <span class="fecha">Semana del 16 de septiembre</span>
-        <span class="qué">Sistematización de las causas y primer cruce contra la información académica.</span>
+        <span class="que">Sistematización de las causas y primer cruce contra la información académica.</span>
+      </div>
+      <div class="hito">
+        <span class="fecha">Próximos 30 días</span>
+        <span class="que">Monitoreo y acompañamiento de las coordinaciones para sostener la matrícula del período.</span>
       </div>
       <div class="hito">
         <span class="fecha">Por definir</span>
-        <span class="qué">Mesas de validación con las direcciones que tienen competencia sobre cada causa.</span>
+        <span class="que">Mesas de validación con las direcciones que tienen competencia sobre cada causa.</span>
       </div>
       <div class="hito">
         <span class="fecha">Por definir</span>
-        <span class="qué">Propuesta de una o dos estrategias, con responsable y forma de medirlas.</span>
+        <span class="que">Propuesta de una o dos estrategias, con responsable y forma de medirlas.</span>
       </div>
     </div>
   </section>
 
 </main>
 
-<footer class="pie shell">
-  <p>Dirección Estratégica de Transformación Digital de la Academia · Universidad Técnica de Machala.</p>
-  <p>Esta página describe el estado de un proceso en curso y se actualiza cuando el proceso avanza. No sustituye a los informes oficiales ni publica resultados todavía no validados.</p>
+<footer class="pie">
+  <div class="pie-interior">
+    <img class="pie-sello" src="marca/sello-blanco.png" alt="" width="256" height="256">
+    <div class="pie-texto">
+      <p class="pie-lema">La universidad del futuro es ahora</p>
+      <p class="pie-firma">Dirección Estratégica de Transformación Digital de la Academia (DTDA) · Universidad Técnica de Machala</p>
+      <p class="pie-fino">Esta página describe el estado de un proceso en curso y se actualiza cuando el proceso avanza. No sustituye a los informes oficiales ni publica resultados todavía no validados.</p>
+    </div>
+  </div>
 </footer>
 
 </body>
